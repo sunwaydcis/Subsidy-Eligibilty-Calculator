@@ -11,7 +11,7 @@
             <option value="C:\PRG2104\Project_23071335\project" />
           </set>
         </option>
-        <option name="sbtVersion" value="2.0.4" />
+        <option name="sbtVersion" value="1.10.5" />
         <option name="separateProdAndTestSourcesIsExplicit" value="true" />
       </SbtProjectSettings>
     </option>

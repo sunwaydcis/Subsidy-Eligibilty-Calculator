@@ -2,6 +2,12 @@
 <project version="4">
   <component name="ScalaCompilerConfiguration">
     <option name="separateProdTestSources" value="true" />
-    <profile name="sbt 1" modules="Project_23071335,Project_23071335.main,Project_23071335.test" />
+    <profile name="sbt 1" modules="Project_23071335,Project_23071335.main,Project_23071335.test,Subsidy Eligibility Calculator,Subsidy-Calculator,Subsidy-Calculator.main,Subsidy-Calculator.test" />
+    <profile name="sbt 2" modules="Subsidy Eligibility Calculator.main,Subsidy Eligibility Calculator.test">
+      <parameters>
+        <parameter value="-Wunused:all" />
+        <parameter value="-Wconf:cat=deprecation:s" />
+      </parameters>
+    </profile>
   </component>
 </project>

@@ -1,0 +1,251 @@
+/* ---- Professional blue palette ----
+   Every color used anywhere below is defined once here as a custom
+   property (-color-*) and referenced everywhere else — retheming
+   again later means editing only this block, nothing else in the
+   file. */
+
+.root {
+    -color-bg: #F5F7FA;
+    -color-surface: #FFFFFF;
+    -color-border: #D7DEE7;
+    -color-border-strong: #C3CEDC;
+    -color-text: #1B2733;
+    -color-text-secondary: #46586B;
+    -color-text-muted: #8493A6;
+    -color-accent: #1D5FA8;
+    -color-accent-hover: #174C87;
+    -color-accent-pressed: #123C6C;
+    -color-accent-tint: #E3EEF9;
+    -color-accent-tint-text: #124C82;
+    -color-danger: #B3261E;
+    -color-danger-tint: #FBEAE9;
+    -color-danger-border: #E7B9B5;
+    -color-sidebar: #14293F;
+    -color-sidebar-hover: #1E3A57;
+    -color-sidebar-text: #C7D6E5;
+    -color-row-alt: #EEF3F8;
+
+    -fx-font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+    -fx-font-size: 13px;
+    -fx-background-color: -color-bg;
+    -fx-text-fill: -color-text;
+}
+
+.label {
+    -fx-text-fill: -color-text;
+}
+
+/* ---- Left nav ---- */
+
+.nav-menu {
+    -fx-background-color: -color-sidebar;
+}
+
+.button.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: -color-sidebar-text;
+    -fx-alignment: CENTER-LEFT;
+    -fx-padding: 8 10 8 10;
+    -fx-font-size: 13px;
+    -fx-background-radius: 8;
+    -fx-border-width: 0;
+    -fx-cursor: hand;
+}
+
+.button.nav-button:hover {
+    -fx-background-color: -color-sidebar-hover;
+}
+
+.button.nav-button:pressed {
+    -fx-background-color: -color-accent;
+}
+
+/* Matched on .button.nav-button-active (all three classes are present
+   together on the active screen's button) so this reliably beats the
+   generic .button rule regardless of file order. */
+.button.nav-button-active {
+    -fx-background-color: -color-accent;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.button.nav-button-active:hover {
+    -fx-background-color: -color-accent;
+}
+
+/* ---- Content cards ----
+   Every screen wraps its top-level content in a "card" style class so
+   it reads as a white panel sitting on the page background, rather
+   than flowing edge-to-edge into it. Subtle shadow gives it a slight
+   lift off the page. */
+
+.card {
+    -fx-background-color: -color-surface;
+    -fx-background-radius: 12;
+    -fx-border-color: -color-border;
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(20,41,63,0.10), 14, 0, 0, 3);
+}
+
+/* ---- Scroll panes: let the card/page background show through
+   instead of ScrollPane's own default white/gray fill ---- */
+
+.scroll-pane, .scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+/* ---- Text fields ---- */
+
+.text-field {
+    -fx-background-color: -color-surface;
+    -fx-background-radius: 8;
+    -fx-border-color: -color-border;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-text-fill: -color-text;
+    -fx-prompt-text-fill: -color-text-muted;
+    -fx-padding: 6 10 6 10;
+}
+
+.text-field:focused {
+    -fx-border-color: -color-accent;
+    -fx-border-width: 1.5;
+}
+
+/* ---- ComboBox ---- */
+
+.combo-box-base {
+    -fx-background-color: -color-surface;
+    -fx-background-radius: 8;
+    -fx-border-color: -color-border;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+}
+
+.combo-box-base:focused {
+    -fx-border-color: -color-accent;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: -color-surface;
+    -fx-border-color: -color-border;
+}
+
+.combo-box-popup .list-cell:filled:selected,
+.combo-box-popup .list-cell:filled:hover {
+    -fx-background-color: -color-accent-tint;
+    -fx-text-fill: -color-accent-tint-text;
+}
+
+/* ---- Buttons ----
+   `.button` alone is a quiet neutral outline. `.button-primary` marks
+   the one strong call to action per screen (Save Household, Check).
+   `.button-secondary` is a lighter blue outline for constructive but
+   non-primary actions (Add Dependent, Add Asset). `.button-danger`
+   marks a destructive action (Remove Selected). */
+
+.button {
+    -fx-background-color: -color-surface;
+    -fx-background-radius: 8;
+    -fx-border-color: -color-border-strong;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-text-fill: -color-text;
+    -fx-padding: 6 14 6 14;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: -color-row-alt;
+}
+
+.button:pressed {
+    -fx-background-color: -color-border;
+}
+
+.button-primary {
+    -fx-background-color: -color-accent;
+    -fx-border-color: -color-accent;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.button-primary:hover {
+    -fx-background-color: -color-accent-hover;
+    -fx-border-color: -color-accent-hover;
+}
+
+.button-primary:pressed {
+    -fx-background-color: -color-accent-pressed;
+    -fx-border-color: -color-accent-pressed;
+}
+
+.button-primary:disabled {
+    -fx-opacity: 0.5;
+}
+
+.button-secondary {
+    -fx-background-color: transparent;
+    -fx-border-color: -color-accent;
+    -fx-text-fill: -color-accent-tint-text;
+}
+
+.button-secondary:hover {
+    -fx-background-color: -color-accent-tint;
+}
+
+.button-danger {
+    -fx-background-color: transparent;
+    -fx-border-color: -color-danger-border;
+    -fx-text-fill: -color-danger;
+}
+
+.button-danger:hover {
+    -fx-background-color: -color-danger-tint;
+}
+
+/* ---- Tables ---- */
+
+.table-view {
+    -fx-background-color: -color-surface;
+    -fx-border-color: -color-border;
+    -fx-border-width: 1;
+    -fx-table-cell-border-color: transparent;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: -color-row-alt;
+    -fx-background-radius: 8 8 0 0;
+}
+
+.table-view .column-header,
+.table-view .filler {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: -color-text;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell {
+    -fx-background-color: -color-surface;
+    -fx-border-color: transparent transparent -color-border transparent;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: -color-row-alt;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: -color-accent-tint;
+}
+
+.table-row-cell:selected .text {
+    -fx-fill: -color-accent-tint-text;
+}
+
+.table-view .placeholder .label {
+    -fx-text-fill: -color-text-muted;
+}
